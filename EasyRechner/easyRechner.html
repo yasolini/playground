@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rechner</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        margin: 0;
+        padding: 2rem;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #1f2937;
+      }
+
+      h1 {
+        color: #111827;
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: #4b5563;
+        max-width: 600px;
+        text-align: center;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      #all {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      label {
+        font-weight: 500;
+        color: #374151;
+      }
+
+      input[type="number"],
+      select {
+        padding: 0.75rem;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+      }
+
+      input[type="number"]:focus,
+      select:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+      }
+
+      input[type="button"] {
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        margin-top: 1rem;
+        grid-column: span 2;
+      }
+
+      input[type="button"]:hover {
+        background-color: #2563eb;
+        transform: translateY(-1px);
+      }
+
+      input[type="button"]:active {
+        transform: translateY(0);
+      }
+
+      #submit {
+        background-color: #10b981;
+        padding: 0.75rem 2rem;
+        font-size: 1.1rem;
+      }
+
+      #submit:hover {
+        background-color: #059669;
+      }
+
+      #p {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 1.5rem;
+        padding: 1rem 2rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        min-width: 200px;
+        text-align: center;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        #all {
+          padding: 1.5rem;
+          grid-template-columns: 1fr;
+        }
+
+        input[type="button"] {
+          grid-column: span 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Einfacher Rechner ohne Sinn</h1>
+    <p>
+      Geben Sie einfach Zahlen und Operatoren ein, und die werden am Ende
+      zusammengerechnet und Sie erhalten ein Ergebnis
+    </p>
+
+    <div id="all">
+      <label for="num1">1. Zahl:</label>
+      <input type="number" name="num1" id="num1" />
+
+      <label for="op1">Operator:</label>
+      <select name="op1" id="op1">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+
+      <label for="num2">2. Zahl:</label>
+      <input type="number" name="num2" id="num2" />
+    </div>
+
+    <input type="button" value="Ergebnis anzeigen" id="submit" />
+    <p id="p"></p>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="./easyRechner.js"
+    ></script>
+  </body>
+</html>
